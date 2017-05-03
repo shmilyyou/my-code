@@ -1,0 +1,29 @@
+/**********************************
+利用opencv的Driectory类进行图片的批量读取
+**********************************/
+#include<opencv2/opencv.hpp>  
+#include<iostream>  
+#include<vector>  
+#include<string>  
+#include <windows.h>  
+  
+using namespace std;  
+using namespace cv;  
+  
+  
+void main()  
+{  
+    Directory dir;  
+  
+    string path1 = "C:\\Users\\Administrator\\Desktop\\date\\MIT\\MIT人脸库\\faces";  
+    string  exten1 = "*.bmp";  
+  
+    vector<string> filenames = dir.GetListFiles(path1, exten1, false);  
+  
+    int size = filenames.size();  
+  
+    for (int i = 0; i < size;i++)  
+    {  
+        cout << filenames[i] << endl;  
+    }  
+}  
